@@ -9,7 +9,7 @@ import SocialMedia from "./SocialMedia";
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="relative h-[80vh]">
+    <div className="relative h-[70vh]">
       <motion.div
         className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0))]"
         initial={{ opacity: 0 }}
