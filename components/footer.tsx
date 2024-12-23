@@ -15,7 +15,7 @@ export function Footer() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-4 gap-8"
+          className="mb-8  grid grid-cols-1 md:grid-cols-4 gap-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -102,9 +102,11 @@ export function Footer() {
           </div>
         </motion.div>
 
+      <hr/>
+
         {/* Additional Info */}
         <motion.div
-          className="mt-8 pt-8 border-t border-white/20 text-center text-sm space-y-4"
+          className="pt-8 text-center text-sm space-y-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
