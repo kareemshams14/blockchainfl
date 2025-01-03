@@ -7,70 +7,70 @@ import SocialMedia from "../SocialMedia";
 import emailjs from "emailjs-com";
 
 export function Contact() {
-  const [showForm, setShowForm] = useState(false);
-  const [formStatus, setFormStatus] = useState("idle");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  // const [showForm, setShowForm] = useState(false);
+  // const [formStatus, setFormStatus] = useState("idle");
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
+  // const [errors, setErrors] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
 
-  const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
+  // const validateEmail = (email: string) => {
+  //   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return regex.test(email);
+  // };
 
-  const validateForm = () => {
-    const newErrors = {
-      name: formData.name ? "" : "Name is required.",
-      email: formData.email
-        ? validateEmail(formData.email)
-          ? ""
-          : "Invalid email address."
-        : "Email is required.",
-      message: formData.message ? "" : "Message is required.",
-    };
-    setErrors(newErrors);
-    return !Object.values(newErrors).some((error) => error !== "");
-  };
+  // const validateForm = () => {
+  //   const newErrors = {
+  //     name: formData.name ? "" : "Name is required.",
+  //     email: formData.email
+  //       ? validateEmail(formData.email)
+  //         ? ""
+  //         : "Invalid email address."
+  //       : "Email is required.",
+  //     message: formData.message ? "" : "Message is required.",
+  //   };
+  //   setErrors(newErrors);
+  //   return !Object.values(newErrors).some((error) => error !== "");
+  // };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) {
-      return;
-    }
-    setFormStatus("loading");
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!validateForm()) {
+  //     return;
+  //   }
+  //   setFormStatus("loading");
 
-    emailjs
-      .send(
-        "your_service_id", // Replace with your EmailJS service ID
-        "your_template_id", // Replace with your EmailJS template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        "your_user_id" // Replace with your EmailJS user ID
-      )
-      .then(
-        () => {
-          setFormStatus("success");
-          setFormData({ name: "", email: "", message: "" });
-          setErrors({ name: "", email: "", message: "" });
-        },
-        () => setFormStatus("error")
-      );
-  };
+  //   emailjs
+  //     .send(
+  //       "your_service_id", // Replace with your EmailJS service ID
+  //       "your_template_id", // Replace with your EmailJS template ID
+  //       {
+  //         from_name: formData.name,
+  //         from_email: formData.email,
+  //         message: formData.message,
+  //       },
+  //       "your_user_id" // Replace with your EmailJS user ID
+  //     )
+  //     .then(
+  //       () => {
+  //         setFormStatus("success");
+  //         setFormData({ name: "", email: "", message: "" });
+  //         setErrors({ name: "", email: "", message: "" });
+  //       },
+  //       () => setFormStatus("error")
+  //     );
+  // };
 
   return (
     <motion.section
@@ -105,18 +105,20 @@ export function Contact() {
 
         <div className="flex justify-center items-center gap-10">
           <motion.button
-            onClick={() => setShowForm(true)}
+            // onClick={() => setShowForm(true)}
             className="bg-primary text-white font-bold w-24 h-24 rounded-full flex items-center justify-center shadow-md hover:bg-primary/90 transition-transform transform hover:scale-105"
-            whileHover={{ rotate: 45 }}
+            whileHover={{ rotate: -40 }}
           >
-            <HiArrowRight size={24} />
+               <a href="mailto:info@blockchainfl.com">
+               <HiArrowRight size={24} />
+               </a>
           </motion.button>
           <h3 className="text-2xl font-bold text-muted-foreground">Let’s Talk</h3>
         </div>
       </div>
 
       {/* Contact Form Popover */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showForm && (
           <motion.div
             className="fixed inset-0 flex items-center justify-center bg-black/70 z-50"
@@ -137,11 +139,10 @@ export function Contact() {
               </h3>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-muted-foreground"
-                  >
-                    Name
+                  <label 
+                    htmlFor="name" 
+                    className = "block text-sm font-medium text-muted-foreground" >
+                      Name
                   </label>
                   <input
                     type="text"
@@ -152,9 +153,9 @@ export function Contact() {
                     className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm bg-white text-gray-800 focus:ring-primary focus:border-primary py-2 px-3"
                     required
                   />
-                  {errors.name && (
+                  { errors.name && (
                     <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-                  )}
+                   )}
                 </div>
                 <div>
                   <label
@@ -215,7 +216,7 @@ export function Contact() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
       {/* Social Media Links */}
       <motion.div
         initial={{ opacity: 0 }}

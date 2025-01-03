@@ -30,13 +30,14 @@ const HeroSection: React.FC = () => {
               Digital Age
             </span>
           </motion.h1>
+          {/*  managed services */}
           <motion.p
             className="text-xl text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 1 }}
           >
-            Empowering businesses with cutting-edge managed services, IT staffing, and innovative blockchain solutions.
+            Empowering businesses with cutting-edge, IT staffing, and innovative blockchain solutions.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 50 }}

@@ -7,7 +7,7 @@ import WorkProcessSection from "@/components/WorkProcessSection";
 import AboutUs from "@/components/about/page";
 import { WorkExperience } from "@/components/WorkExperience";
 import { RecentWorks } from "@/components/RecentWorks";
-import ContactForm from "@/components/ContactForm";
+// import ContactForm from "@/components/ContactForm";
 import { Contact } from "@/components/contact/page";
 
 export default function Home() {

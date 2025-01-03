@@ -20,6 +20,9 @@ export function Footer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
+
+         
+          
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
@@ -40,27 +43,62 @@ export function Footer() {
             </p>
           </div>
 
+          {/* Layout */}
+              <div>
+                  <h3 className="font-semibold mb-4">Layout</h3>
+                  <ul className="space-y-2 text-sm">
+                    <li>
+                      <Link href="#" className="text-muted-foreground hover:text-primary">
+                      Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="#projects" className="text-muted-foreground hover:text-primary">
+                        Projects
+                      </Link>
+                    </li>
+                    {/* <li>
+                      <Link href="#" className="text-muted-foreground hover:text-primary">
+                        Terms of Service
+                      </Link>
+                    </li> */}
+                    <li>
+                      <a href="mailto:info@blockchainfl.com" className="text-muted-foreground hover:text-primary">
+                        Schedule a Consultation
+                      </a>
+                    </li>
+                  </ul>
+          </div>
+
           {/* Services */}
           <div>
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#services" className="text-muted-foreground hover:text-primary">
-                  IT Staffing
+                  Web Application Development
+                </Link> 
+              </li>
+              <li>
+                <Link href="#services" className="text-muted-foreground hover:text-primary">
+                Mobile Application Development 
+                </Link>
+              </li> 
+              <li>
+                <Link href="#services" className="text-muted-foreground hover:text-primary">
+                IT Staffing  
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="text-muted-foreground hover:text-primary">
-                  EOR Services
+                AI & Automation
                 </Link>
-              </li>
-              <li>
-                <Link href="#services" className="text-muted-foreground hover:text-primary">
-                  AOR Services
-                </Link>
-              </li>
+              </li> 
+            
             </ul>
           </div>
+
+
 
           {/* Company */}
           <div>
@@ -68,38 +106,18 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#about" className="text-muted-foreground hover:text-primary">
-                  About Us
+                  About us
                 </Link>
               </li>
               <li>
                 <Link href="#about" className="text-muted-foreground hover:text-primary">
-                  Contact
+                  Contact us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Legal */}
-          <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
-                  Security
-                </Link>
-              </li>
-            </ul>
-          </div>
+       
         </motion.div>
 
       <hr/>
