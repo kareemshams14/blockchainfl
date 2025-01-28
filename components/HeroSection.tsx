@@ -57,7 +57,7 @@ const HeroSection: React.FC = () => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="#about">Learn More</Link>
+              <Link href="https://jobs.gusto.com/boards/blockchain-florida-llc-c89c196c-bbc9-401e-b226-6dd2a7846fe4">We’re Hiring!</Link>
             </Button>
           </motion.div>
         </div>
